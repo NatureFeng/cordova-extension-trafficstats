@@ -6,7 +6,7 @@ var exec = require('cordova/exec');
 * @class TrafficStats
 * @platform Android
 */
-var TrafficStats = function() {};
+var TrafficStat = function() {};
 
 /**
 * 获取2G和3G网络的网络上行流量
@@ -22,7 +22,7 @@ var TrafficStats = function() {};
 * @platform Android
 * @since 3.0.0
 */
-TrafficStats.prototype.getMobileTxTraffic = function(successCallback, errorCallback){
+TrafficStat.prototype.getMobileTxTraffic = function(successCallback, errorCallback){
   cordova.exec(successCallback,errorCallback, "TrafficStat", "GSMtx", []);
 };
 
@@ -40,7 +40,7 @@ TrafficStats.prototype.getMobileTxTraffic = function(successCallback, errorCallb
 * @platform Android
 * @since 3.0.0
 */
-TrafficStats.prototype.getMobileRxTraffic = function(successCallback, errorCallback){
+TrafficStat.prototype.getMobileRxTraffic = function(successCallback, errorCallback){
   cordova.exec(successCallback, errorCallback, "TrafficStat", "GSMrx", []);
 };
 
@@ -59,7 +59,7 @@ TrafficStats.prototype.getMobileRxTraffic = function(successCallback, errorCallb
 * @platform Android
 * @since 3.0.0
 */
-TrafficStats.prototype.getTotalTxTraffic = function(successCallback, errorCallback){
+TrafficStat.prototype.getTotalTxTraffic = function(successCallback, errorCallback){
   cordova.exec(successCallback, errorCallback, "TrafficStat", "Totaltx", []);
 };
 
@@ -78,8 +78,8 @@ TrafficStats.prototype.getTotalTxTraffic = function(successCallback, errorCallba
 * @platform Android
 * @since 3.0.0
 */
-TrafficStats.prototype.getTotalRxTraffic = function(successCallback, errorCallback){
+TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallback){
   cordova.exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
 };
 
-module.exports = new TrafficStats();
+module.exports = new TrafficStat();
