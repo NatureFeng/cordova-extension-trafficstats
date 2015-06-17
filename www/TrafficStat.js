@@ -79,11 +79,8 @@ TrafficStat.prototype.getTotalTxTraffic = function(successCallback, errorCallbac
 * @since 3.0.0
 */
 TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallback){
-  try{
-    cordova.exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
-  }catch(e){
-    console.log("2333333: "+e);
-  }
+  console.log(111111);
+  cordova.exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
 };
 
 module.exports = new TrafficStat();
