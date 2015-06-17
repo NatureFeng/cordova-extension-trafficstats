@@ -31,7 +31,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
 
-        <source-file src="src/android/TrafficStats.java" target-dir="src/com/naturefeng/cordova/plugin/TrafficStat" />
+        <source-file src="src/android/TrafficStat.java" target-dir="src/com/naturefeng/cordova/plugin/TrafficStat" />
     </platform>
 
 </plugin>
