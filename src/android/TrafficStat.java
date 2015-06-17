@@ -15,6 +15,7 @@ public class TrafficStat extends CordovaPlugin {
     
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        Log.i("test","1");
         if (action.equals("GSMtx")) { 
             this.GSMtx(callbackContext);
             return true;
@@ -103,14 +104,21 @@ public class TrafficStat extends CordovaPlugin {
      * Total tx total bytes
      */
     private void Totalrx(CallbackContext callbackContext) {
+        Log.i("test","2");
         JSONObject mStartRX = new JSONObject();
+        Log.i("test","3");
         long RX = 0;
         try{
+            Log.i("test","4");
             RX = TrafficStats.getTotalRxBytes();
+            Log.i("test","5");
             if(RX != TrafficStats.UNSUPPORTED){
+                Log.i("test","6");
                 mStartRX.put("TRXBytes", RX);
+                Log.i("test","7");
                 callbackContext.success(mStartRX);
             } else {
+                Log.i("test","8");
                 callbackContext.error("Stats Not Possible");
             }
         }
