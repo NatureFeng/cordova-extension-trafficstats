@@ -1,4 +1,4 @@
-package com.naturefeng.cordova.plugin.TrafficStat;
+package com.naturefeng.cordova.plugin;
 
 import android.net.TrafficStats;
 import org.apache.cordova.CallbackContext;
