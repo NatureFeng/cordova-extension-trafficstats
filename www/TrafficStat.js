@@ -23,7 +23,7 @@ var TrafficStat = function() {};
 * @since 3.0.0
 */
 TrafficStat.prototype.getMobileTxTraffic = function(successCallback, errorCallback){
-  cordova.exec(successCallback,errorCallback, "TrafficStat", "GSMtx", []);
+  exec(successCallback,errorCallback, "TrafficStat", "GSMtx", []);
 };
 
 /**
@@ -41,7 +41,7 @@ TrafficStat.prototype.getMobileTxTraffic = function(successCallback, errorCallba
 * @since 3.0.0
 */
 TrafficStat.prototype.getMobileRxTraffic = function(successCallback, errorCallback){
-  cordova.exec(successCallback, errorCallback, "TrafficStat", "GSMrx", []);
+  exec(successCallback, errorCallback, "TrafficStat", "GSMrx", []);
 };
 
 /**
@@ -60,7 +60,7 @@ TrafficStat.prototype.getMobileRxTraffic = function(successCallback, errorCallba
 * @since 3.0.0
 */
 TrafficStat.prototype.getTotalTxTraffic = function(successCallback, errorCallback){
-  cordova.exec(successCallback, errorCallback, "TrafficStat", "Totaltx", []);
+  exec(successCallback, errorCallback, "TrafficStat", "Totaltx", []);
 };
 
 /**
@@ -79,8 +79,7 @@ TrafficStat.prototype.getTotalTxTraffic = function(successCallback, errorCallbac
 * @since 3.0.0
 */
 TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallback){
-  console.log(111111);
-  cordova.exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
+  exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
 };
 
 module.exports = new TrafficStat();
