@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.polyvi.xface.extension.trafficstats"
+        id="com.naturefeng.cordova.plugin.TrafficStat"
         xmlns:android="http://schemas.android.com/apk/res/android"
         version="1.0.1">
 
-    <name>TrafficStats</name>
+    <name>TrafficStat</name>
     <author>NatureFeng</author>
-    <keywords>cordova, trafficStats, total</keywords>
+    <keywords>cordova, trafficStat, total</keywords>
     <license>GPLv3</license>
-    <description>trafficstats extension</description>
+    <description>trafficstat extension</description>
 
-    <js-module src="www/TrafficStats.js" name="TrafficStats">
-        <clobbers target="window.TrafficStats" />
+    <js-module src="www/TrafficStat.js" name="TrafficStat">
+        <clobbers target="window.TrafficStat" />
     </js-module>
 
     <engines>
@@ -23,7 +23,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="TrafficStats">
-                <param name="android-package" value="com.naturefeng.cordova.plugin.TrafficStats.TrafficStats"/>
+                <param name="android-package" value="com.naturefeng.cordova.plugin.TrafficStat.TrafficStat"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -31,7 +31,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
 
-        <source-file src="src/android/TrafficStats.java" target-dir="src/com/naturefeng/cordova/plugin/TrafficStats" />
+        <source-file src="src/android/TrafficStats.java" target-dir="src/com/naturefeng/cordova/plugin/TrafficStat" />
     </platform>
 
 </plugin>

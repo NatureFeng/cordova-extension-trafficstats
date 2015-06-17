@@ -1,8 +1,8 @@
-package com.naturefeng.cordova.plugin.TrafficStats;
+package com.naturefeng.cordova.plugin.TrafficStat;
 
 import android.net.TrafficStats;
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
