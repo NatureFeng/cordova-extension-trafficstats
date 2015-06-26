@@ -7,6 +7,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.util.Log;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -30,6 +35,10 @@ public class TrafficStat extends CordovaPlugin {
         }
         else if(action.equals("Totalrx")) {
             this.Totalrx(callbackContext);
+            return true;
+        }
+        else if(action.equals("getUids")) {
+            this.GetUids(callbackContext);
             return true;
         }
         return false;
@@ -119,5 +128,28 @@ public class TrafficStat extends CordovaPlugin {
         {
             callbackContext.error("Exception");
         }
+    }
+
+    public void GetUids(CallbackContext callbackContext) {
+        List<Integer> uidList = new ArrayList<Integer>();
+        PackageManager pm = getPackageManager();
+        List<PackageInfo> packinfos = pm.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES|PackageManager.GET_PERMISSIONS);
+        for (PackageInfo info : packinfos) {
+            String[] premissions = info.requestedPermissions;
+            if (premissions != null && premissions.length > 0) {
+                for (String premission : premissions) {
+                    if ("android.permission.INTERNET".equals(premission)) {
+                        // System.out.println(info.packageName+"访问网络");
+                        int uid = info.applicationInfo.uid;
+                        Log.i("test", "uid = " + uid);
+                        // String name = pm.getNameForUid(uid);
+                        // // textName.setText(name);
+                        // Log.i("test", "name = "+name);
+                        uidList.add(uid);
+                    }
+                }
+            }
+        }
+        callbackContext.success(uidList);
     }
 }
