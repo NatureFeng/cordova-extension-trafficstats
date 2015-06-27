@@ -132,7 +132,7 @@ public class TrafficStat extends CordovaPlugin {
 
     public void GetUids(CallbackContext callbackContext) {
         List<Integer> uidList = new ArrayList<Integer>();
-        PackageManager pm = getPackageManager();
+        PackageManager pm = this.getPackageManager();
         List<PackageInfo> packinfos = pm.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES|PackageManager.GET_PERMISSIONS);
         for (PackageInfo info : packinfos) {
             String[] premissions = info.requestedPermissions;
