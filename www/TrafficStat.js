@@ -82,8 +82,4 @@ TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallbac
   exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
 };
 
-TrafficStat.prototype.getUids = function(successCallback, errorCallback){
-  exec(successCallback, errorCallback, "TrafficStat", "GetUids", []);
-};
-
 module.exports = new TrafficStat();
