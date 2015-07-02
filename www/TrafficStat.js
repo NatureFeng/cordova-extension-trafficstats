@@ -82,4 +82,24 @@ TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallbac
   exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
 };
 
+
+/**
+* 获取Uid
+@example
+      xFace.getWifiTraffic(
+      function(trafficData)
+      {
+          alert(trafficData);
+      },null);
+* @method getWifiTraffic
+* @param {Function} successCallback 成功回调函数
+* @param {String} successCallback.trafficData 网络流量,单位为KB
+* @param {Function} [errorCallback]   失败回调函数
+* @platform Android
+* @since 3.0.0
+*/
+TrafficStat.prototype.getUid = function(successCallback, errorCallback){
+  exec(successCallback, errorCallback, "TrafficStat", "GetUids", []);
+};
+
 module.exports = new TrafficStat();

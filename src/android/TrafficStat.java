@@ -37,6 +37,10 @@ public class TrafficStat extends CordovaPlugin {
             this.Totalrx(callbackContext);
             return true;
         }
+        else if(action.equals("GetUids")) {
+            this.GetUids(callbackContext);
+            return true;
+        }
         return false;
     }
 
@@ -126,7 +130,7 @@ public class TrafficStat extends CordovaPlugin {
         }
     }
 
-    private void getUids(CallbackContext callbackContext) {
+    private void GetUids(CallbackContext callbackContext) {
         String uidList = "";
         PackageManager pm = this.cordova.getActivity().getPackageManager();
         List<PackageInfo> packinfos = pm
