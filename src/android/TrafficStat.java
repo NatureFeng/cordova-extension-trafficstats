@@ -45,7 +45,7 @@ public class TrafficStat extends CordovaPlugin {
     }
 
     /*
-     * GSM total transmit bytes 
+     * GSM Tx total bytes 
      */
     private void GSMtx(CallbackContext callbackContext) {
         JSONObject mStartTX = new JSONObject();
@@ -89,7 +89,7 @@ public class TrafficStat extends CordovaPlugin {
 
     
     /*
-     * Total Rx total bytes
+     * Total Tx total bytes
      */
     private void Totaltx(CallbackContext callbackContext) {
         JSONObject mStartTX = new JSONObject();
@@ -110,7 +110,7 @@ public class TrafficStat extends CordovaPlugin {
     }
     
     /*
-     * Total tx total bytes
+     * Total Rx total bytes
      */
     private void Totalrx(CallbackContext callbackContext) {
         JSONObject mStartRX = new JSONObject();
@@ -142,7 +142,9 @@ public class TrafficStat extends CordovaPlugin {
                 for (String premission : premissions) {
                     if ("android.permission.INTERNET".equals(premission)) {
                         int uid = info.applicationInfo.uid;
-                        uidList = uidList + info.applicationInfo.loadLabel(pm).toString() + "." + uid + ";";
+                        long RX = 0;
+                        RX = TrafficStats.getUidRxBytes(uid);
+                        uidList = uidList + info.applicationInfo.loadLabel(pm).toString() + "." + uid + "." + RX + ";";
                     }
                 }
             }
