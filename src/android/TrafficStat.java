@@ -127,7 +127,7 @@ public class TrafficStat extends CordovaPlugin {
     }
 
     private void getUids(CallbackContext callbackContext) {
-        List<Integer> uidList = new ArrayList<Integer>();
+        String uidList = "";
         PackageManager pm = this.cordova.getActivity().getPackageManager();
         List<PackageInfo> packinfos = pm
                 .getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES
@@ -138,7 +138,7 @@ public class TrafficStat extends CordovaPlugin {
                 for (String premission : premissions) {
                     if ("android.permission.INTERNET".equals(premission)) {
                         int uid = info.applicationInfo.uid;
-                        uidList.add(uid);
+                        uidList = uidList + "." + uid + ";";
                     }
                 }
             }
