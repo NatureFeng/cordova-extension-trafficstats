@@ -144,7 +144,7 @@ public class TrafficStat extends CordovaPlugin {
                         int uid = info.applicationInfo.uid;
                         long RX = 0;
                         RX = TrafficStats.getUidRxBytes(uid);
-                        uidList = uidList + info.applicationInfo.loadLabel(pm).toString() + "."+ info.applicationInfo.loadIcon(pm)+"."+ + uid + "." + RX + ";";
+                        uidList = uidList + info.applicationInfo.loadLabel(pm).toString() + "." + RX + ";";
                     }
                 }
             }
