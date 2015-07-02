@@ -142,7 +142,8 @@ public class TrafficStat extends CordovaPlugin {
                 for (String premission : premissions) {
                     if ("android.permission.INTERNET".equals(premission)) {
                         int uid = info.applicationInfo.uid;
-                        uidList = uidList + "." + uid + ";";
+                        info.applicationInfo.loadLabel(pm).toString()
+                        uidList = uidList + info.applicationInfo.loadLabel(pm).toString() + "." + uid + ";";
                     }
                 }
             }
