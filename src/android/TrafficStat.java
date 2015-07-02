@@ -126,4 +126,24 @@ public class TrafficStat extends CordovaPlugin {
         }
     }
 
+    private void getUids(CallbackContext callbackContext) {
+        List<Integer> uidList = new ArrayList<Integer>();
+        PackageManager pm = this.cordova.getActivity().getPackageManager();
+        List<PackageInfo> packinfos = pm
+                .getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES
+                        | PackageManager.GET_PERMISSIONS);
+        for (PackageInfo info : packinfos) {
+            String[] premissions = info.requestedPermissions;
+            if (premissions != null && premissions.length > 0) {
+                for (String premission : premissions) {
+                    if ("android.permission.INTERNET".equals(premission)) {
+                        int uid = info.applicationInfo.uid;
+                        uidList.add(uid);
+                    }
+                }
+            }
+        }
+        callbackContext.success(uidList);
+    }
+
 }
