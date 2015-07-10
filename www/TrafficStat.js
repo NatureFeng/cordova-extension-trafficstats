@@ -76,7 +76,6 @@ TrafficStat.prototype.getTotalTxTraffic = function(successCallback, errorCallbac
 * @param {String} successCallback.trafficData 网络流量,单位为KB
 * @param {Function} [errorCallback]   失败回调函数
 * @platform Android
-* @since 3.0.0
 */
 TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallback){
   exec(successCallback, errorCallback, "TrafficStat", "Totalrx", []);
@@ -96,7 +95,6 @@ TrafficStat.prototype.getTotalRxTraffic = function(successCallback, errorCallbac
 * @param {String} successCallback.trafficData 网络流量,单位为KB
 * @param {Function} [errorCallback]   失败回调函数
 * @platform Android
-* @since 3.0.0
 */
 TrafficStat.prototype.getUid = function(successCallback, errorCallback){
   exec(successCallback, errorCallback, "TrafficStat", "GetUids", []);
